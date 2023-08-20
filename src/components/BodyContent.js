@@ -2,7 +2,7 @@ import React from 'react'
 
 const BodyContent = () => {
   return (
-    <div className='col-span-9'>
+    <div className=''>
       BodyContent
     </div>
   )
