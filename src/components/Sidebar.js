@@ -1,6 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
+  const toggleSidebar = useSelector((store)=>store.sidebar.isOpen)
+  console.log(toggleSidebar);
+  if(!toggleSidebar) return null;
+
   return (
     <div className='w-48 border-r border-gray-300'>
       <div className='mb-6'>
