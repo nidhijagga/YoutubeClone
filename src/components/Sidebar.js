@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const toggleSidebar = useSelector((store) => store.sidebar.isOpen);
@@ -16,8 +17,12 @@ const Sidebar = () => {
           <ul className='w-full pb-5 border-b border-gray-300'>
             {mainLinks.map((link, index) => (
               <li key={index} className='py-1 px-2 m-2 hover:bg-gray-200 hover:rounded-3xl'>
-                {link}
-              </li>
+              {index === 0 ? (
+                <Link to="/" className='text-blue-600 hover:underline'>{link}</Link>
+              ) : (
+                link
+              )}
+            </li>
             ))}
           </ul>
         </div>
